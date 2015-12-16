@@ -1,4 +1,8 @@
-:map <F5> :setlocal spell! spelllang=en_us<CR>
+map <F2> :setlocal spell! spelllang=en_us<CR>
+map <F3> :NERDTreeToggle<CR>
+map <F4> :TagbarToggle<CR>
+map <F5> :PymodeLint<CR>
+map <F6> :PymodeLintToggle<CR>
 set hidden
 set number
 set cursorline
@@ -118,18 +122,14 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" TagBar настройки
-map <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1 " автофокус на Tagbar при открытии
 
 " NerdTree настройки
-" показать NERDTree на F3
-map <F3> :NERDTreeToggle<CR>
 "игноррируемые файлы с расширениями
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']  
 
 " TaskList настройки
-map <F2> :TaskList<CR> 	   " отобразить список тасков на F2
+" map <F2> :TaskList<CR> 	   " отобразить список тасков на F2
 
 " Работа буфферами
 map <C-q> :bd<CR> 	   " CTRL+Q - закрыть текущий буффер
