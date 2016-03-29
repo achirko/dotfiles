@@ -46,6 +46,9 @@ Plugin 'mitsuhiko/vim-python-combined'  " Combined Python 2/3 for Vim
 " --- Go ---
 Plugin 'fatih/vim-go'
 
+" --- Dockerfile ---
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+
 call vundle#end()               " required
 filetype on
 filetype plugin on
@@ -172,6 +175,7 @@ let g:pymode_folding = 0
 let g:pymode_run = 0
 
 let g:jedi#popup_select_first = 1
+let g:jedi#show_call_signatures = "0"
 
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
