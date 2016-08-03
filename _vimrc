@@ -7,6 +7,7 @@ set hidden
 set number
 set cursorline
 set tabstop=2 shiftwidth=2 expandtab
+let &t_Co=256
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -121,7 +122,7 @@ let g:snippets_dir = "~/.vim/vim-snippets/snippets"
 " настройки Vim-Airline
 set laststatus=2
 let g:airline_theme='badwolf'
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
