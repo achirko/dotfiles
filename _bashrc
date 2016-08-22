@@ -185,11 +185,26 @@ alias clean_pycs='find . -name "*.pyc" -exec rm {} \;'
 complete -F _complete_hosts ssh
 complete -F _complete_hosts host
 
-export ANSIBLE_VAULT_PW='~/.ansible/vault-pw'
-export PATH=$PATH:~/bin/go/bin:~/bin/packer
-export GOPATH=~/workspace/gocode
-export GOROOT=~/bin/go
+#export GOPATH=~/workspace/gocode
+#export GOROOT=~/bin/go
+# useful aliases
 alias pp='python -mjson.tool'
-source ~/workspace/venv/bin/activate
+alias vi=vim
+alias findpy='git ls-files | grep .py'
+alias py=python
+alias cl=clear
+# docker aliases
+alias de='docker exec -it'
+alias dps='docker ps'
+alias dpu='docker pull'
+alias drmi='docker rmi'
+alias di='docker images'
+#source ~/workspace/venv/bin/activate
 #source ~/workspace/pipac/venv/bin/activate
 stty -ixon
+# Sonar runner
+export SONAR_RUNNER_HOME=/home/vagrant/bin/sonar-runner-2.4
+source ~/.autoenv/activate.sh
+export PATH=$PATH:~/bin:~/bin/packer:~/bin/sonar-runner-2.4/bin
+
+source .secretrc

@@ -1,6 +1,6 @@
 [user]
-    name = Oleksandr Chyrko
-    email = aleksandr.chirko@gmail.com
+	name = Oleksandr Chyrko
+	email = oleksandrc@backbase.com
 
 [color]
     diff = auto
@@ -14,6 +14,8 @@
 [core]
     editor = emacs
     pager = less -R
+    autocrlf = input
+    eol = input
 
 [alias]
     diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
