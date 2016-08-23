@@ -1,6 +1,3 @@
-map <F2> :setlocal spell! spelllang=en_us<CR>
-map <F3> :NERDTreeToggle<CR>
-
 set hidden
 set cursorline
 set tabstop=2 shiftwidth=2 expandtab
@@ -179,4 +176,7 @@ let g:tagbar_type_go = {
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+
+map <F2> :setlocal spell! spelllang=en_us<CR>
+map <F3> :NERDTreeToggle<CR>
+map <F4> :TagbarToggle<CR>
