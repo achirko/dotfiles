@@ -99,7 +99,7 @@ if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
   done
 
   alias ls="ls --color=auto"
-  alias ll="ls --color=auto -l"
+  alias ll="ls --color=auto -lh"
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
@@ -191,14 +191,28 @@ complete -F _complete_hosts host
 alias pp='python -mjson.tool'
 alias vi=vim
 alias findpy='git ls-files | grep .py'
+alias gitpy='findpy'
+alias http='http -a $EMAIL:$PASSWORD'
 alias py=python
 alias cl=clear
-# docker aliases
-alias de='docker exec -it'
-alias dps='docker ps'
-alias dpu='docker pull'
-alias drmi='docker rmi'
-alias di='docker images'
+alias rda='docker rm -f `docker ps -aq`'
+
+gitgrep()
+{
+  grep "$@" `git ls`
+}
+
+venv()
+{
+  virtualenv venv
+  . venv/bin/activate
+  cat << EOF > .env
+  deactivate
+  . `readlink -f venv/bin/activate`
+EOF
+}
+
+alias grepgit='gitgrep'
 #source ~/workspace/venv/bin/activate
 #source ~/workspace/pipac/venv/bin/activate
 stty -ixon
@@ -207,4 +221,4 @@ export SONAR_RUNNER_HOME=/home/vagrant/bin/sonar-runner-2.4
 source ~/.autoenv/activate.sh
 export PATH=$PATH:~/bin:~/bin/packer:~/bin/sonar-runner-2.4/bin
 
-source .secretrc
+source ~/.secretrc

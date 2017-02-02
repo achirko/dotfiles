@@ -9,7 +9,7 @@
     ui = auto
 
 [push]
-    default = matching
+	default = current
 
 [core]
     editor = emacs
@@ -29,4 +29,7 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
+    grep = !sh -c 'grep "$@" `git ls`'
 
+[pull]
+	default = current

@@ -148,7 +148,7 @@ let g:pymode_doc_key = 'K'
 " " проверка кода
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore="E501,W601,C0110"
+let g:pymode_lint_ignore="E501,W601,C0110,E711,E402"
 " " провека кода после сохранения
 let g:pymode_lint_write = 1
 "
@@ -174,17 +174,5 @@ let g:pymode_run = 0
 let g:jedi#popup_select_first = 1
 let g:jedi#show_call_signatures = "0"
 
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_fail_silently = 1
+" enable line numbers
+let g:NERDTreeShowLineNumbers=1
