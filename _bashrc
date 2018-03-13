@@ -196,10 +196,17 @@ alias http='http -a $EMAIL:$PASSWORD'
 alias py=python
 alias cl=clear
 alias rda='docker rm -f `docker ps -aq`'
+alias vo=vim
+alias vu=vim
 
 gitgrep()
 {
   grep "$@" `git ls`
+}
+
+gitll()
+{
+  git ls $@ | xargs ls --color=auto -lh
 }
 
 venv()
@@ -212,6 +219,8 @@ venv()
 EOF
 }
 
+# highlight () { grep --color -E "$1|$" "${@:1}" ; }
+
 alias grepgit='gitgrep'
 #source ~/workspace/venv/bin/activate
 #source ~/workspace/pipac/venv/bin/activate
@@ -222,3 +231,6 @@ source ~/.autoenv/activate.sh
 export PATH=$PATH:~/bin:~/bin/packer:~/bin/sonar-runner-2.4/bin
 
 source ~/.secretrc
+
+export HISTSIZE=10000
+export HISTFILESIZE=10000

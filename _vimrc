@@ -10,6 +10,7 @@ set tabstop=2 shiftwidth=2 expandtab
 let &t_Co=256
 set clipboard=unnamed 
 "set exrc
+vnoremap // y/<C-R>"<CR>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -148,7 +149,7 @@ let g:pymode_doc_key = 'K'
 " " проверка кода
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore="E501,W601,C0110,E711,E402"
+let g:pymode_lint_ignore=['E501' ,'W601', 'C0110', 'E711', 'E402', 'C901']
 " " провека кода после сохранения
 let g:pymode_lint_write = 1
 "
