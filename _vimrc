@@ -3,12 +3,14 @@ map <F3> :NERDTreeToggle<CR>
 map <F4> :TagbarToggle<CR>
 map <F5> :PymodeLint<CR>
 map <F6> :PymodeLintToggle<CR>
+map ,* *<C-O>:%s///gn<CR>
 set hidden
 set number
 set cursorline
 set tabstop=2 shiftwidth=2 expandtab
 let &t_Co=256
 set clipboard=unnamed 
+set mouse=n
 "set exrc
 vnoremap // y/<C-R>"<CR>
 
@@ -30,6 +32,7 @@ Plugin 'majutsushi/tagbar'            " Class/module browser
 
 "------------------=== Other ===----------------------
 Plugin 'bling/vim-airline'          " Lean & mean status/tabline for vim
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fisadev/FixedTaskList.vim'    " Pending tasks list
 Plugin 'rosenfeld/conque-term'        " Consoles as buffers
 Plugin 'tpope/vim-surround'     " Parentheses, brackets, quotes, XML tags, and more
@@ -75,7 +78,7 @@ set ttyfast
 
 " включить подсветку кода
 syntax on
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
+"set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 
 tab sball
 set switchbuf=useopen
@@ -109,7 +112,7 @@ set tabstop=8
 augroup vimrc_autocmds
     autocmd!
     autocmd FileType ruby,python,javascript,c,cpp highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType ruby,python,javascript,c,cpp match Excess /\%80v.*/
+    autocmd FileType ruby,python,javascript,c,cpp match Excess /\%99v.*/
     autocmd FileType ruby,python,javascript,c,cpp set nowrap
 augroup END
 
@@ -148,8 +151,9 @@ let g:pymode_doc = 0
 let g:pymode_doc_key = 'K'
 " " проверка кода
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore=['E501' ,'W601', 'C0110', 'E711', 'E402', 'C901']
+" let g:pymode_lint_checkers = ['flake8', 'mccabe']
+" let g:pymode_lint_checker = "flake8"
+" let g:pymode_lint_ignore=['E501' ,'W601', 'C0110', 'E711', 'E402', 'C901']
 " " провека кода после сохранения
 let g:pymode_lint_write = 1
 "
@@ -171,6 +175,9 @@ let g:pymode_folding = 0
 "
 " " возможность запускать код
 let g:pymode_run = 0
+let g:pymode_python = 'python3'
+
+"let g:pymode_options_max_line_length = 99
 
 let g:jedi#popup_select_first = 1
 let g:jedi#show_call_signatures = "0"

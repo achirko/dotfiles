@@ -1,6 +1,6 @@
 [user]
 	name = Oleksandr Chyrko
-	email = oleksandrc@backbase.com
+	email = aleksandr.chirko@gmail.com
 
 [color]
     diff = auto
@@ -30,6 +30,9 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     grep = !sh -c 'grep "$@" `git ls`'
+    push-for-review = push gerrit HEAD:refs/for/develop
 
 [pull]
 	default = current
+[http]
+	postBuffer = 1572864000

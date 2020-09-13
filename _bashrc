@@ -190,7 +190,7 @@ complete -F _complete_hosts host
 # useful aliases
 alias pp='python -mjson.tool'
 alias vi=vim
-alias findpy='git ls-files | grep .py'
+alias findpy='git ls-files | grep \\.py'
 alias gitpy='findpy'
 alias http='http -a $EMAIL:$PASSWORD'
 alias py=python
@@ -198,6 +198,9 @@ alias cl=clear
 alias rda='docker rm -f `docker ps -aq`'
 alias vo=vim
 alias vu=vim
+alias it='git'
+alias flbl='black $(gitpy);flake8 $(gitpy)'
+alias blfl='flbl'
 
 gitgrep()
 {
@@ -211,10 +214,10 @@ gitll()
 
 venv()
 {
-  virtualenv venv
+  python3 -m venv venv
   . venv/bin/activate
   cat << EOF > .env
-  deactivate
+  deactivate >> /dev/null 2>&1
   . `readlink -f venv/bin/activate`
 EOF
 }
@@ -226,11 +229,18 @@ alias grepgit='gitgrep'
 #source ~/workspace/pipac/venv/bin/activate
 stty -ixon
 # Sonar runner
-export SONAR_RUNNER_HOME=/home/vagrant/bin/sonar-runner-2.4
 source ~/.autoenv/activate.sh
 export PATH=$PATH:~/bin:~/bin/packer:~/bin/sonar-runner-2.4/bin
 
-source ~/.secretrc
+# source ~/.secretrc
 
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+source ~/.autoenv/activate.sh
+alias mc='EDITOR=vim mc -b'
+source ~/.git-completion.bash
+
+export ANSIBLE_VAULT_PASSWORD_FILE=/Users/oleksandrchyrko/.ansible/vault.txt
+export ANSIBLE_HOST_KEY_CHECKING=false
+
+alias serial='picocom -b 115200'
